@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-Workorder workorderFromJson(String str) => Workorder.fromJson(json.decode(str));
+Workorder workorderFromJson(var str) => Workorder.fromJson(str);
 
 String workorderToJson(Workorder data) => json.encode(data.toJson());
 
@@ -20,16 +20,16 @@ class Workorder {
   ResponseInfo responseInfo;
 
   factory Workorder.fromJson(Map<String, dynamic> json) => Workorder(
-    member: List<Member>.from(json["member"].map((x) => Member.fromJson(x))),
-    href: json["href"],
-    responseInfo: ResponseInfo.fromJson(json["responseInfo"]),
-  );
+        member: List<Member>.from(json["member"].map((x) => Member.fromJson(x))),
+        href: json["href"],
+        responseInfo: ResponseInfo.fromJson(json["responseInfo"]),
+      );
 
   Map<String, dynamic> toJson() => {
-    "member": List<dynamic>.from(member.map((x) => x.toJson())),
-    "href": href,
-    "responseInfo": responseInfo.toJson(),
-  };
+        "member": List<dynamic>.from(member.map((x) => x.toJson())),
+        "href": href,
+        "responseInfo": responseInfo.toJson(),
+      };
 }
 
 class Member {
@@ -61,103 +61,103 @@ class Member {
     required this.status,
   });
 
-  String wpmaterialCollectionref;
-  String labtransCollectionref;
-  String description;
-  String woactivityCollectionref;
-  String wplaborCollectionref;
-  String wpserviceCollectionref;
-  String rowstamp;
-  String invreserveCollectionref;
-  String wptoolCollectionref;
-  String siteid;
-  String relatedrecordCollectionref;
-  String failurereportCollectionref;
-  String href;
-  String assignmentCollectionref;
-  String multiassetlocciCollectionref;
-  String statusDescription;
-  String worklogCollectionref;
-  String matusetransCollectionref;
-  String tooltransCollectionref;
-  String moddowntimehistCollectionref;
-  String wonum;
-  Longdescription longdescription;
-  String woserviceaddressCollectionref;
-  String servrectransCollectionref;
-  String status;
+  String? wpmaterialCollectionref;
+  String? labtransCollectionref;
+  String? description;
+  String? woactivityCollectionref;
+  String? wplaborCollectionref;
+  String? wpserviceCollectionref;
+  String? rowstamp;
+  String? invreserveCollectionref;
+  String? wptoolCollectionref;
+  String? siteid;
+  String? relatedrecordCollectionref;
+  String? failurereportCollectionref;
+  String? href;
+  String? assignmentCollectionref;
+  String? multiassetlocciCollectionref;
+  String? statusDescription;
+  String? worklogCollectionref;
+  String? matusetransCollectionref;
+  String? tooltransCollectionref;
+  String? moddowntimehistCollectionref;
+  String? wonum;
+  Longdescription? longdescription;
+  String? woserviceaddressCollectionref;
+  String? servrectransCollectionref;
+  String? status;
 
   factory Member.fromJson(Map<String, dynamic> json) => Member(
-    wpmaterialCollectionref: json["wpmaterial_collectionref"],
-    labtransCollectionref: json["labtrans_collectionref"],
-    description: json["description"],
-    woactivityCollectionref: json["woactivity_collectionref"],
-    wplaborCollectionref: json["wplabor_collectionref"],
-    wpserviceCollectionref: json["wpservice_collectionref"],
-    rowstamp: json["_rowstamp"],
-    invreserveCollectionref: json["invreserve_collectionref"],
-    wptoolCollectionref: json["wptool_collectionref"],
-    siteid: json["siteid"],
-    relatedrecordCollectionref: json["relatedrecord_collectionref"],
-    failurereportCollectionref: json["failurereport_collectionref"],
-    href: json["href"],
-    assignmentCollectionref: json["assignment_collectionref"],
-    multiassetlocciCollectionref: json["multiassetlocci_collectionref"],
-    statusDescription: json["status_description"],
-    worklogCollectionref: json["worklog_collectionref"],
-    matusetransCollectionref: json["matusetrans_collectionref"],
-    tooltransCollectionref: json["tooltrans_collectionref"],
-    moddowntimehistCollectionref: json["moddowntimehist_collectionref"],
-    wonum: json["wonum"],
-    longdescription: Longdescription.fromJson(json["longdescription"]),
-    woserviceaddressCollectionref: json["woserviceaddress_collectionref"],
-    servrectransCollectionref: json["servrectrans_collectionref"],
-    status: json["status"],
-  );
+        wpmaterialCollectionref: json["wpmaterial_collectionref"],
+        labtransCollectionref: json["labtrans_collectionref"],
+        description: json["description"],
+        woactivityCollectionref: json["woactivity_collectionref"],
+        wplaborCollectionref: json["wplabor_collectionref"],
+        wpserviceCollectionref: json["wpservice_collectionref"],
+        rowstamp: json["_rowstamp"],
+        invreserveCollectionref: json["invreserve_collectionref"],
+        wptoolCollectionref: json["wptool_collectionref"],
+        siteid: json["siteid"],
+        relatedrecordCollectionref: json["relatedrecord_collectionref"],
+        failurereportCollectionref: json["failurereport_collectionref"],
+        href: json["href"],
+        assignmentCollectionref: json["assignment_collectionref"],
+        multiassetlocciCollectionref: json["multiassetlocci_collectionref"],
+        statusDescription: json["status_description"],
+        worklogCollectionref: json["worklog_collectionref"],
+        matusetransCollectionref: json["matusetrans_collectionref"],
+        tooltransCollectionref: json["tooltrans_collectionref"],
+        moddowntimehistCollectionref: json["moddowntimehist_collectionref"],
+        wonum: json["wonum"],
+        longdescription: Longdescription.fromJson(json["longdescription"]),
+        woserviceaddressCollectionref: json["woserviceaddress_collectionref"],
+        servrectransCollectionref: json["servrectrans_collectionref"],
+        status: json["status"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "wpmaterial_collectionref": wpmaterialCollectionref,
-    "labtrans_collectionref": labtransCollectionref,
-    "description": description,
-    "woactivity_collectionref": woactivityCollectionref,
-    "wplabor_collectionref": wplaborCollectionref,
-    "wpservice_collectionref": wpserviceCollectionref,
-    "_rowstamp": rowstamp,
-    "invreserve_collectionref": invreserveCollectionref,
-    "wptool_collectionref": wptoolCollectionref,
-    "siteid": siteid,
-    "relatedrecord_collectionref": relatedrecordCollectionref,
-    "failurereport_collectionref": failurereportCollectionref,
-    "href": href,
-    "assignment_collectionref": assignmentCollectionref,
-    "multiassetlocci_collectionref": multiassetlocciCollectionref,
-    "status_description": statusDescription,
-    "worklog_collectionref": worklogCollectionref,
-    "matusetrans_collectionref": matusetransCollectionref,
-    "tooltrans_collectionref": tooltransCollectionref,
-    "moddowntimehist_collectionref": moddowntimehistCollectionref,
-    "wonum": wonum,
-    "longdescription": longdescription.toJson(),
-    "woserviceaddress_collectionref": woserviceaddressCollectionref,
-    "servrectrans_collectionref": servrectransCollectionref,
-    "status": status,
-  };
+        "wpmaterial_collectionref": wpmaterialCollectionref,
+        "labtrans_collectionref": labtransCollectionref,
+        "description": description,
+        "woactivity_collectionref": woactivityCollectionref,
+        "wplabor_collectionref": wplaborCollectionref,
+        "wpservice_collectionref": wpserviceCollectionref,
+        "_rowstamp": rowstamp,
+        "invreserve_collectionref": invreserveCollectionref,
+        "wptool_collectionref": wptoolCollectionref,
+        "siteid": siteid,
+        "relatedrecord_collectionref": relatedrecordCollectionref,
+        "failurereport_collectionref": failurereportCollectionref,
+        "href": href,
+        "assignment_collectionref": assignmentCollectionref,
+        "multiassetlocci_collectionref": multiassetlocciCollectionref,
+        "status_description": statusDescription,
+        "worklog_collectionref": worklogCollectionref,
+        "matusetrans_collectionref": matusetransCollectionref,
+        "tooltrans_collectionref": tooltransCollectionref,
+        "moddowntimehist_collectionref": moddowntimehistCollectionref,
+        "wonum": wonum,
+        "longdescription": longdescription?.toJson(),
+        "woserviceaddress_collectionref": woserviceaddressCollectionref,
+        "servrectrans_collectionref": servrectransCollectionref,
+        "status": status,
+      };
 }
 
 class Longdescription {
   Longdescription({
-   required  this.ldtext,
+    required this.ldtext,
   });
 
-  String ldtext;
+  String? ldtext;
 
   factory Longdescription.fromJson(Map<String, dynamic> json) => Longdescription(
-    ldtext: json["ldtext"] == null ? null : json["ldtext"],
-  );
+        ldtext: json["ldtext"] == null ? null : json["ldtext"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "ldtext": ldtext == null ? null : ldtext,
-  };
+        "ldtext": ldtext == null ? null : ldtext,
+      };
 }
 
 class ResponseInfo {
@@ -170,12 +170,12 @@ class ResponseInfo {
   int pagenum;
 
   factory ResponseInfo.fromJson(Map<String, dynamic> json) => ResponseInfo(
-    href: json["href"],
-    pagenum: json["pagenum"],
-  );
+        href: json["href"],
+        pagenum: json["pagenum"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "href": href,
-    "pagenum": pagenum,
-  };
+        "href": href,
+        "pagenum": pagenum,
+      };
 }
